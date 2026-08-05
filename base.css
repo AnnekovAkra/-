@@ -1,0 +1,136 @@
+/* Переменные дизайна клиники */
+:root {
+    --bg-base: #fdfcfb;
+    --grid-line: rgba(215, 198, 175, 0.22);
+    --text-dark: #2a241c;
+    --text-muted: #736657;
+    --accent-gold: #91795d;
+    --accent-cream: #e0d5c1;
+    --accent-cream-dark: #bfae95;
+    
+    /* Ультра-округление */
+    --radius-xl: 40px;
+    --radius-lg: 24px;
+    --radius-sm: 14px;
+    
+    /* Параметры матового стекла */
+    --glass-bg: rgba(255, 255, 255, 0.5);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.75);
+    --glass-blur: blur(25px);
+    --glass-shadow: 0 12px 45px 0 rgba(145, 121, 93, 0.06);
+}
+
+/* Сброс стилей и структура */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-dark);
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 130px;
+}
+
+/* Широкий контейнер 1400px */
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 45px;
+    letter-spacing: -0.5px;
+}
+
+/* Фирменная кремовая сетка */
+.grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+    background-size: 55px 55px;
+    z-index: -3;
+}
+
+/* Световые сферы под стеклом */
+.glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(150px);
+    z-index: -2;
+    opacity: 0.55;
+    pointer-events: none;
+}
+.orb-top { top: -10%; right: -5%; width: 700px; height: 700px; background: radial-gradient(circle, #f5ebd9 0%, transparent 75%); }
+.orb-middle { top: 45%; left: -15%; width: 650px; height: 650px; background: radial-gradient(circle, #eaddc5 0%, transparent 75%); }
+.orb-bottom { bottom: -10%; right: -10%; width: 700px; height: 700px; background: radial-gradient(circle, #ebe0ce 0%, transparent 75%); }
+
+@media (max-width: 1024px) {
+    .wrapper { padding: 20px; gap: 60px; }
+}
+.contacts-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: -30px auto 50px;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+/* Базовые параметры подвала */
+.glass-footer {
+    width: 100%;
+    margin-top: 60px;
+    padding: 30px 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(215, 198, 175, 0.15);
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Стилизация модального фона */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(42, 36, 28, 0.3); /* Затемнение в тонах клиники */
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}

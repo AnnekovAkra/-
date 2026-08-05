@@ -1,0 +1,465 @@
+/* Шапка (Header) */
+.glass-header {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: calc(100% - 80px);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+    z-index: 100;
+}
+
+.header-container { display: flex; align-items: center; justify-content: space-between; padding: 16px 36px; }
+.logo-block { display: flex; align-items: center; gap: 12px; }
+.logo-icon { font-size: 1.4rem; color: var(--accent-gold); }
+.logo-text { display: flex; flex-direction: column; }
+.logo-title { font-weight: 800; font-size: 1rem; letter-spacing: 2px; }
+.logo-subtitle { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1px; }
+
+.nav-menu { display: flex; gap: 40px; }
+.nav-link { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 1rem; padding: 6px 0; position: relative; transition: color 0.3s; }
+.nav-link:hover, .nav-link.active { color: var(--accent-gold); }
+.nav-link::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: var(--accent-gold); transition: all 0.3s ease; transform: translateX(-50%); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+.header-actions { display: flex; align-items: center; gap: 24px; }
+.phone-link { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 1rem; }
+.btn-glass-cta { background: rgba(145, 121, 93, 0.1); border: 1px solid rgba(145, 121, 93, 0.2); color: var(--accent-gold); padding: 12px 24px; font-weight: 600; font-size: 0.95rem; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.3s; }
+.btn-glass-cta:hover { background: var(--accent-gold); color: #fff; }
+
+/* Главный баннер (Hero) */
+.hero-banner-glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    min-height: 540px;
+}
+
+.hero-left-content { flex: 1.1; padding: 80px; display: flex; flex-direction: column; align-items: flex-start; }
+.hero-tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--accent-gold); margin-bottom: 16px; }
+.hero-title { font-size: 3.4rem; font-weight: 800; line-height: 1.15; margin-bottom: 22px; letter-spacing: -0.5px; }
+.hero-title span { color: var(--accent-gold); }
+.hero-description { color: var(--text-muted); font-size: 1.1rem; line-height: 1.55; margin-bottom: 35px; max-width: 540px; }
+.btn-primary-round { background: var(--accent-gold); color: #fff; border: none; padding: 16px 36px; font-size: 1.05rem; font-weight: 600; border-radius: 30px; cursor: pointer; box-shadow: 0 8px 20px rgba(145, 121, 93, 0.15); transition: all 0.3s; }
+.btn-primary-round:hover { transform: translateY(-2px); background: #7d674e; }
+.slider-dots { display: flex; gap: 8px; margin-top: 45px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(145, 121, 93, 0.2); cursor: pointer; }
+.dot.active { width: 24px; border-radius: 4px; background: var(--accent-gold); }
+
+.hero-right-image { flex: 0.9; height: 100%; align-self: stretch; padding: 30px; }
+.image-mask-wrapper { width: 100%; height: 100%; border-radius: 30px 80px 30px 30px; overflow: hidden; }
+.hero-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Карточки преимуществ и строгие иконки */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.feature-glass-card { background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: var(--glass-border); border-radius: var(--radius-lg); padding: 40px 30px; text-align: center; box-shadow: var(--glass-shadow); transition: all 0.3s ease; }
+.feature-glass-card:hover { transform: translateY(-5px); border-color: rgba(145, 121, 93, 0.3); }
+
+.strict-cream-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--bg-base);
+    border: 1px solid var(--accent-cream-dark);
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-shape { display: block; background: var(--accent-gold); }
+.inner-shape.square { width: 14px; height: 14px; border-radius: 3px; }
+.inner-shape.diamond { width: 14px; height: 14px; transform: rotate(45deg); }
+.inner-shape.lines { width: 18px; height: 2px; box-shadow: 0 5px 0 var(--accent-gold), 0 -5px 0 var(--accent-gold); }
+.inner-shape.cross { width: 16px; height: 2px; position: relative; }
+.inner-shape.cross::after { content: ''; position: absolute; top: -7px; left: 7px; width: 2px; height: 16px; background: var(--accent-gold); }
+
+.feature-glass-card h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+.feature-glass-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.45; }
+
+/* Карточки услуг (Services) */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
+.service-card-glass { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: var(--glass-border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--glass-shadow); transition: transform 0.3s; }
+.service-card-glass:hover { transform: translateY(-4px); }
+.service-img-holder { width: 100%; height: 220px; overflow: hidden; background: #eee; }
+.service-img-holder img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.service-card-glass:hover .service-img-holder img { transform: scale(1.04); }
+.service-info { padding: 30px; }
+.service-info h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
+.service-info p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px; }
+.service-more { text-decoration: none; color: var(--accent-gold); font-weight: 600; font-size: 0.95rem; }
+
+/* Таблица цен (Prices) */
+.prices-glass-table { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: var(--glass-border); border-radius: var(--radius-xl); padding: 40px; box-shadow: var(--glass-shadow); display: flex; flex-direction: column; gap: 20px; }
+.price-row { display: flex; justify-content: space-between; align-items: center; padding-bottom: 20px; border-bottom: 1px solid rgba(215, 198, 175, 0.25); }
+.price-row:last-child { border-bottom: none; padding-bottom: 0; }
+.price-name h4 { font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
+.price-name p { color: var(--text-muted); font-size: 0.9rem; }
+.price-value { font-size: 1.3rem; font-weight: 700; color: var(--text-dark); white-space: nowrap; padding-left: 20px; }
+.highlight-price { color: var(--accent-gold); font-size: 1.4rem; }
+
+/* Блок FAQ */
+.faq-glass-container { background: var(--glass-bg); backdrop-filter: var(--glass-blur); border: var(--glass-border); border-radius: var(--radius-xl); padding: 30px 40px; box-shadow: var(--glass-shadow); display: flex; flex-direction: column; }
+.faq-item-details { border-bottom: 1px solid rgba(215, 198, 175, 0.25); padding: 24px 0; }
+.faq-item-details:last-child { border-bottom: none; }
+.faq-item-details summary { list-style: none; font-weight: 600; font-size: 1.15rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.faq-item-details summary::-webkit-details-marker { display: none; }
+.arrow-icon::after { content: '→'; font-size: 1.2rem; color: var(--accent-gold); transition: transform 0.25s; display: inline-block; }
+.faq-item-details[open] .arrow-icon::after { transform: rotate(90deg); }
+.faq-item-content { margin-top: 14px; font-size: 1rem; line-height: 1.6; color: #4e4336; }
+
+/* Медиа-запросы адаптации */
+@media (max-width: 1024px) {
+    .hero-banner-glass { flex-direction: column; }
+    .hero-right-image { width: 100%; height: 380px; }
+    .nav-menu { display: none; }
+    .hero-left-content { padding: 40px 30px; }
+    .hero-title { font-size: 2.4rem; }
+}
+@media (max-width: 600px) {
+    .prices-glass-table { padding: 20px; }
+    .price-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .price-value { padding-left: 0; }
+    .services-grid { grid-template-columns: 1fr; }
+    .header-container { padding: 10px 16px; }
+    .phone-link { display: none; }
+    .glass-header { width: calc(100% - 20px); top: 10px; }
+}
+/* ==========================================================================
+   8. СЕКЦИЯ КОНТАКТОВ В ЛС (CONTACTS CARDS)
+   ========================================================================== */
+.contacts-glass-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-messenger-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: 45px 40px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: var(--glass-shadow);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+/* Эффект легкого свечения мессенджера изнутри при наведении */
+.contact-messenger-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.contact-messenger-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px 0 rgba(145, 121, 93, 0.12);
+}
+
+.contact-messenger-card:hover::before {
+    opacity: 1;
+}
+
+/* Цветные контуры при фокусе на конкретный мессенджер */
+.telegram-card:hover { border-color: rgba(0, 136, 204, 0.3); }
+.whatsapp-card:hover { border-color: rgba(37, 211, 102, 0.3); }
+
+/* Индикатор статуса Онлайн */
+.card-status-badge {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(215, 198, 175, 0.3);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    background-color: #25d366; /* Зеленый огонек */
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px #25d366;
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* Элементы внутри карточки */
+.messenger-logo {
+    font-size: 2.2rem;
+    background: rgba(255, 255, 255, 0.7);
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.messenger-info h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+}
+
+.messenger-info p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+/* Красивая вытянутая кнопка перехода в ЛС */
+.messenger-action-btn {
+    background: var(--bg-base);
+    border: 1px solid var(--accent-cream-dark);
+    color: var(--text-dark);
+    text-align: center;
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-top: auto; /* Прижимает кнопку к низу карточки */
+}
+
+.telegram-card:hover .messenger-action-btn {
+    background: #0088cc;
+    color: #fff;
+    border-color: #0088cc;
+    box-shadow: 0 8px 20px rgba(0, 136, 204, 0.25);
+}
+
+.whatsapp-card:hover .messenger-action-btn {
+    background: #25d366;
+    color: #fff;
+    border-color: #25d366;
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+}
+
+/* Строгая информационная нижняя панель */
+.contacts-footer-info {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(215, 198, 175, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 30px 40px;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.info-block-item h5 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.info-block-item p {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+/* Адаптация под небольшие экраны */
+@media (max-width: 992px) {
+    .contacts-glass-grid { grid-template-columns: 1fr; }
+    .contacts-footer-info { flex-direction: column; gap: 20px; padding: 25px; }
+}
+
+@media (max-width: 480px) {
+    .contact-messenger-card { padding: 30px 20px; }
+    .card-status-badge { top: 20px; right: 20px; }
+}
+/* ==========================================================================
+   9. КУКИ И ЮРИДИЧЕСКИЕ ССЫЛКИ (COOKIE & LEGAL)
+   ========================================================================== */
+
+/* Фирменная ссылка в футере */
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.legal-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.25s;
+    border-bottom: 1px solid transparent;
+}
+
+.legal-link:hover {
+    color: var(--accent-gold);
+    border-color: rgba(145, 121, 93, 0.3);
+}
+
+.legal-divider {
+    opacity: 0.3;
+}
+
+/* Баннер куки в стиле матового стекла (В точности как на референсе) */
+.cookie-glass-banner {
+    position: fixed;
+    bottom: 25px;
+    left: 40px;
+    max-width: 380px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(42, 36, 28, 0.08);
+    padding: 24px;
+    z-index: 999;
+    animation: slideUpCookie 0.5s ease-out;
+}
+
+@keyframes slideUpCookie {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.cookie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cookie-content p {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #4e4336;
+}
+
+/* Кнопочка согласия */
+.btn-cookie-accept {
+    background: var(--accent-gold);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+.btn-cookie-accept:hover {
+    background: #7d674e;
+}
+
+/* Модальная карточка из матового стекла для текста соглашений */
+.modal-glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: var(--glass-border);
+    border-radius: var(--radius-xl);
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-glass-card {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--text-dark);
+}
+
+.modal-glass-card h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.3px;
+}
+
+.modal-scroll-text {
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+.modal-scroll-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4e4336;
+    margin-bottom: 15px;
+}
+
+/* Кастомный скроллбар для текста документов */
+.modal-scroll-text::-webkit-scrollbar { width: 4px; }
+.modal-scroll-text::-webkit-scrollbar-track { background: transparent; }
+.modal-scroll-text::-webkit-scrollbar-thumb { background: var(--accent-cream-dark); border-radius: 4px; }
+
+/* Адаптивность для мобилок */
+@media (max-width: 768px) {
+    .footer-container { flex-direction: column; gap: 15px; text-align: center; }
+    .cookie-glass-banner { left: 15px; right: 15px; max-width: calc(100% - 30px); bottom: 15px; }
+    .modal-glass-card { padding: 30px 20px; }
+}
